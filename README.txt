@@ -1,0 +1,24 @@
+OpenURI and MemCached sitting in a tree
+Require the library using 
+  require 'openuri_memcached'
+  
+To get started run your memcached server
+  $ memcached -d 
+The default address that this gem will terminate against is localhost:11211, you can change this using
+  OpenURI::Cache.host = ['serverone.com:11211', 'servertwo:11211']
+
+The cache defaults to 15 minutes, however this can be changed using:
+  OpenURI::Cache.expiry = 60 * 10 # Ten long minutes
+  
+Execution
+Use exactly the same as you would openuri, only.. enable it.
+
+  require 'openuri_memcached'
+  OpenURI::Cache.enable!
+  open("http://germanforblack.com").read # Slow as a wet week
+  
+Quit your app (leave memcached running) and run the same example, it 
+should now happen in less then ... some time that is really fast.
+
+Questions and comments can be directed to ben at germanforblack.com
+All code is provided with no warranty and should be considered experimental until otherwise stated

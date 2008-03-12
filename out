@@ -1,0 +1,153 @@
+(in /Users/ben/Documents/Projects/schwarz/openuri_memcached)
+** Invoke deploy (first_time)
+** Invoke check_version (first_time)
+** Execute check_version
+** Invoke website (first_time)
+** Invoke publish_docs (first_time)
+** Invoke clean (first_time)
+** Invoke clobber_docs (first_time)
+** Execute clobber_docs
+** Invoke clobber_package (first_time)
+** Execute clobber_package
+** Execute clean
+** Invoke docs (first_time)
+** Invoke doc/index.html (first_time)
+** Invoke History.txt (first_time, not_needed)
+** Invoke License.txt (first_time, not_needed)
+** Invoke README.txt (first_time, not_needed)
+** Invoke lib/openuri_memcached.rb (first_time, not_needed)
+** Invoke lib/openuri_memcached/openuri_memcached.rb (first_time, not_needed)
+** Invoke lib/openuri_memcached/version.rb (first_time, not_needed)
+** Invoke rakefile (first_time, not_needed)
+** Execute doc/index.html
+
+Files:   6
+Classes: 3
+Modules: 4
+Methods: 11
+Elapsed: 0.740s
+** Execute docs
+** Execute publish_docs
+building file list ... done
+./
+classes/
+classes/Kernel.html
+classes/OpenURI/
+classes/OpenURI/Cache.html
+classes/OpenURI/Cache.src/
+classes/OpenURI/Cache.src/M000001.html
+classes/OpenURI/Cache.src/M000002.html
+classes/OpenURI/Cache.src/M000003.html
+classes/OpenURI/Cache.src/M000004.html
+classes/OpenURI/Cache.src/M000005.html
+classes/OpenURI/Cache.src/M000006.html
+classes/OpenURI/Cache.src/M000007.html
+classes/OpenURI/Cache.src/M000008.html
+classes/OpenURI/Cache.src/M000009.html
+created.rid
+dot/
+dot/f_0.dot
+dot/f_0.png
+dot/f_4.dot
+dot/f_4.png
+dot/m_4_0.dot
+dot/m_4_0.png
+dot/m_4_1.dot
+dot/m_4_1.png
+files/
+files/History_txt.html
+files/License_txt.html
+files/README_txt.html
+files/lib/
+files/lib/openuri_memcached/
+files/lib/openuri_memcached/openuri_memcached_rb.html
+files/lib/openuri_memcached/version_rb.html
+files/lib/openuri_memcached_rb.html
+fr_class_index.html
+fr_file_index.html
+fr_method_index.html
+index.html
+rdoc-style.css
+
+sent 5191 bytes  received 1252 bytes  477.26 bytes/sec
+total size is 58135  speedup is 9.02
+** Execute website
+** Invoke release (first_time)
+** Invoke clean 
+** Invoke package (first_time)
+** Invoke pkg/openuri_memcached-0.0.3.tgz (first_time)
+** Invoke pkg/openuri_memcached-0.0.3 (first_time)
+** Invoke History.txt (not_needed)
+** Invoke License.txt (not_needed)
+** Invoke Manifest.txt (first_time, not_needed)
+** Invoke README.txt (not_needed)
+** Invoke Rakefile (first_time, not_needed)
+** Invoke config/hoe.rb (first_time, not_needed)
+** Invoke config/requirements.rb (first_time, not_needed)
+** Invoke lib/openuri_memcached.rb (not_needed)
+** Invoke lib/openuri_memcached/openuri_memcached.rb (not_needed)
+** Invoke lib/openuri_memcached/version.rb (not_needed)
+** Invoke spec/openuri_cache_spec.rb (first_time, not_needed)
+** Execute pkg/openuri_memcached-0.0.3
+** Invoke History.txt (not_needed)
+** Invoke License.txt (not_needed)
+** Invoke Manifest.txt (not_needed)
+** Invoke README.txt (not_needed)
+** Invoke Rakefile (not_needed)
+** Invoke config/hoe.rb (not_needed)
+** Invoke config/requirements.rb (not_needed)
+** Invoke lib/openuri_memcached.rb (not_needed)
+** Invoke lib/openuri_memcached/openuri_memcached.rb (not_needed)
+** Invoke lib/openuri_memcached/version.rb (not_needed)
+** Invoke spec/openuri_cache_spec.rb (not_needed)
+** Execute pkg/openuri_memcached-0.0.3.tgz
+openuri_memcached-0.0.3/
+openuri_memcached-0.0.3/config/
+openuri_memcached-0.0.3/config/._hoe.rb
+openuri_memcached-0.0.3/config/hoe.rb
+openuri_memcached-0.0.3/config/._requirements.rb
+openuri_memcached-0.0.3/config/requirements.rb
+openuri_memcached-0.0.3/._History.txt
+openuri_memcached-0.0.3/History.txt
+openuri_memcached-0.0.3/lib/
+openuri_memcached-0.0.3/lib/openuri_memcached/
+openuri_memcached-0.0.3/lib/openuri_memcached/._openuri_memcached.rb
+openuri_memcached-0.0.3/lib/openuri_memcached/openuri_memcached.rb
+openuri_memcached-0.0.3/lib/openuri_memcached/._version.rb
+openuri_memcached-0.0.3/lib/openuri_memcached/version.rb
+openuri_memcached-0.0.3/lib/._openuri_memcached.rb
+openuri_memcached-0.0.3/lib/openuri_memcached.rb
+openuri_memcached-0.0.3/._License.txt
+openuri_memcached-0.0.3/License.txt
+openuri_memcached-0.0.3/._Manifest.txt
+openuri_memcached-0.0.3/Manifest.txt
+openuri_memcached-0.0.3/Rakefile
+openuri_memcached-0.0.3/._README.txt
+openuri_memcached-0.0.3/README.txt
+openuri_memcached-0.0.3/spec/
+openuri_memcached-0.0.3/spec/._openuri_cache_spec.rb
+openuri_memcached-0.0.3/spec/openuri_cache_spec.rb
+** Invoke gem (first_time)
+** Invoke pkg/openuri_memcached-0.0.3.gem (first_time)
+** Invoke pkg (first_time, not_needed)
+** Invoke History.txt (not_needed)
+** Invoke License.txt (not_needed)
+** Invoke Manifest.txt (not_needed)
+** Invoke README.txt (not_needed)
+** Invoke Rakefile (not_needed)
+** Invoke config/hoe.rb (not_needed)
+** Invoke config/requirements.rb (not_needed)
+** Invoke lib/openuri_memcached.rb (not_needed)
+** Invoke lib/openuri_memcached/openuri_memcached.rb (not_needed)
+** Invoke lib/openuri_memcached/version.rb (not_needed)
+** Invoke spec/openuri_cache_spec.rb (not_needed)
+** Execute pkg/openuri_memcached-0.0.3.gem
+  Successfully built RubyGem
+  Name: openuri_memcached
+  Version: 0.0.3
+  File: openuri_memcached-0.0.3.gem
+** Execute gem
+** Execute package
+** Execute release
+Logging in
+Releasing openuri_memcached v. 0.0.3
