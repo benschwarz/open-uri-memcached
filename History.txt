@@ -1,3 +1,6 @@
+== 0.1.0 2008-04-17
+* Included Evan Weaver's Memcached C wrapper for a healthy speed improvement
+
 == 0.0.3 2008-01-18
 * Caches are now stored by the uri as the key like they originally were
 
