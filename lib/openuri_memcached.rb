@@ -14,9 +14,9 @@ end
 module OpenURI
   alias original_open open #:nodoc:
   def self.open(uri, *rest, &block)
-    if Cache.enabled? and Cache.alive?
+    if Cache.enabled? and Cache::alive?
       begin
-        response = Cache.get(uri.to_s)
+        response = Cache::get(uri.to_s)
       rescue
         response = false
       end
@@ -24,14 +24,12 @@ module OpenURI
     
     unless response
       response = openuri_original_open(uri, *rest, &block).read 
-      Cache.set(uri.to_s, response) if Cache.alive?
+      Cache::set(uri.to_s, response) if Cache.alive?
     end
     StringIO.new(response)
   end
   
   class Cache
-    VERSION = '0.1.0'
-    
     # Cache is not enabled by default
     @cache_enabled = false
     
@@ -45,7 +43,7 @@ module OpenURI
       
       # Enable caching
       def enable!
-        @cache ||= Memcached.new(host)
+        @cache ||= MemCache.new(host, :namespace => "openuri")
         @cache_enabled = true
       end
       
@@ -77,7 +75,7 @@ module OpenURI
       end
       
       def host
-        @host ||= "127.0.0.1:11211"
+        @host ||= "localhost:11211"
       end
     end
   end

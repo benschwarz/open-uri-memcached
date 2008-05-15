@@ -10,7 +10,7 @@ Require the library using
 To get started run your memcached server
   $ memcached -d 
 The default address that this gem will terminate against is localhost:11211, you can change this using
-  OpenURI::Cache.host = ['serverone.com:11211', 'servertwo:11211']
+  OpenURI::Cache.host = ['10.1.1.10:11211', '10.1.1.11:11211']
 
 The cache defaults to 15 minutes, however this can be changed using:
   OpenURI::Cache.expiry = 60 * 10 # Ten long minutes
@@ -28,6 +28,6 @@ should now happen in less then ... some time that is really fast.
 Questions and comments can be directed to ben at germanforblack.com
 
 Requirements: 
-  Evan Weaver's C Wrapper to Memcached (http://blog.evanweaver.com/files/doc/fauna/memcached/files/README.html)
-  Memcached 
-  
+	» Ruby 1.8.6
+	» Memcached 
+	» memcache-client

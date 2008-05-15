@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
   s.summary = "The same OpenURI that you know and love with the power of Memcached"
   s.description = s.summary
   s.files = %w(README Rakefile lib/openuri_memcached.rb)
-  s.add_dependency("memcached", ">= 0.9")
+  s.add_dependency("memcache-client", ">= 1.2.1")
   s.rubyforge_project = "schwarz"
 end
 
