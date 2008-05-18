@@ -1,6 +1,6 @@
 require 'open-uri'
 require 'rubygems'
-require 'memcache'
+require 'memcached'
 
 module Kernel
   private 
@@ -14,17 +14,17 @@ end
 module OpenURI
   alias original_open open #:nodoc:
   def self.open(uri, *rest, &block)
-    if Cache.enabled? and Cache::alive?
+    if Cache.enabled?
       begin
         response = Cache::get(uri.to_s)
-      rescue
+      rescue Memcached::NotFound
         response = false
       end
     end
     
     unless response
-      response = openuri_original_open(uri, *rest, &block).read 
-      Cache::set(uri.to_s, response) if Cache.alive?
+      response = openuri_original_open(uri, *rest, &block).read
+      Cache::set(uri.to_s, response) if Cache.enabled?
     end
     StringIO.new(response)
   end
@@ -43,7 +43,7 @@ module OpenURI
       
       # Enable caching
       def enable!
-        @cache ||= MemCache.new(host, :namespace => "openuri")
+        @cache ||= Memcached.new(host, {:namespace => 'openuri'})
         @cache_enabled = true
       end
       
@@ -70,12 +70,8 @@ module OpenURI
         @expiry ||= 60 * 10
       end
       
-      def alive?
-        servers = @cache.instance_variable_get(:@servers) and servers.collect{|s| s.alive?}.include?(true)
-      end
-      
       def host
-        @host ||= "localhost:11211"
+        @host ||= "127.0.0.1:11211"
       end
     end
   end

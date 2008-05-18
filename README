@@ -30,4 +30,4 @@ Questions and comments can be directed to ben at germanforblack.com
 Requirements: 
 	» Ruby 1.8.6
 	» Memcached 
-	» memcache-client
+	» memcache - Refer to blog.evanweaver.com/files/doc/fauna/memcached/files/README.html for installation notes

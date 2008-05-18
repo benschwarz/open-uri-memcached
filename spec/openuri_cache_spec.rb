@@ -41,7 +41,7 @@ describe OpenURI::Cache, "class" do
   
   it "should allow a userset host" do
     server = "10.1.1.1:11211"
-    OpenURI::Cache.host.should eql "localhost:11211"
+    OpenURI::Cache.host.should eql "127.0.0.1:11211"
     OpenURI::Cache.host = server
     OpenURI::Cache.host.should eql server
   end
