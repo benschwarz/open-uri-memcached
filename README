@@ -30,6 +30,4 @@ Questions and comments can be directed to ben at germanforblack.com
 Requirements: 
 	» Ruby 1.8.6
 	» Memcached 
-	» memcache - Refer to blog.evanweaver.com/files/doc/fauna/memcached/files/README.html for installation notes
-	 For the gem, do this `sudo env ARCHFLAGS="-arch i386" gem install memcached --no-rdoc --no-ri -- --with-opt-dir=/opt/local`
-	
+	» memcached-client gem
