@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.files = %w(README lib/openuri_memcached.rb)
   
   # Deps
-  s.add_dependency("memcache-client", ">= 1.2.1")
+  s.add_dependency("memcached", ">= 0.10")
 end
