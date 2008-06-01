@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version = '0.1.1'
   s.email = "ben@germanforblack.com"
   s.homepage = "http://github.com/benschwarz/open-uri-memcached"
-  s.description = "A command line ruby based tool to download muxtapes from muxtape.com"
+  s.description = "OpenURI with transparent caching"
   s.authors = ["Ben Schwarz"]
   s.summary = "The same OpenURI that you know and love with the power of Memcached"
   s.files = %w(README lib/openuri_memcached.rb)
