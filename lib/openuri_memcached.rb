@@ -1,5 +1,11 @@
 require 'open-uri'
-require 'rubygems'
+
+begin
+  require 'minigems'
+rescue LoadError
+  require 'rubygems'
+end
+
 require 'memcached'
 
 module Kernel
