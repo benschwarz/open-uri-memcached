@@ -16,6 +16,28 @@ describe OpenURI, "module" do
     OpenURI::Cache.should be_enabled
     open('http://google.com').read.should =~ /html/
   end
+  
+  it "should query a resource with cache when using block syntax" do
+    OpenURI::Cache.enable!
+    OpenURI::Cache.should be_enabled
+    open('http://google.com') { |f| f.read }.should =~ /html/
+  end
+    
+  it "should not interfere with standard operation of Kernel::open" do
+    lambda { open("./spec/assets/test") }.should_not raise_error
+  end
+
+  it "should not interfere with standard operation of Kernel::open when passed a block" do
+    lambda { open("./spec/assets/test") { |f| f.read } }.should_not raise_error
+  end
+
+  it "should still be able to open and read a file" do
+    open("./spec/assets/test").read.should == "I have been read!"
+  end
+
+  it "should still be to open and read a file when passed a block" do
+    open("./spec/assets/test") { |f| f.read }.should == "I have been read!"
+  end
 end
 
 describe OpenURI::Cache, "class" do  
@@ -45,4 +67,5 @@ describe OpenURI::Cache, "class" do
     OpenURI::Cache.host = server
     OpenURI::Cache.host.should eql(server)
   end
+  
 end

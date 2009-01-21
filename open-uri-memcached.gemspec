@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "openuri_memcached"
-  s.version = '0.1.2'
+  s.version = '0.1.3'
   s.email = "ben@germanforblack.com"
   s.homepage = "http://github.com/benschwarz/open-uri-memcached"
   s.description = "OpenURI with transparent caching"
