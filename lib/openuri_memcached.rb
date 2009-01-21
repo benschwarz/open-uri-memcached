@@ -38,7 +38,7 @@ module OpenURI
     
     unless response
       response = openuri_original_open(uri, *rest)
-      Cache::set(uri.to_s, response) if Cache.enabled?
+      Cache::set(uri.to_s, response.clone.read) if Cache.enabled?
     end
 
     if block_given?
