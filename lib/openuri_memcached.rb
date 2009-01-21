@@ -30,16 +30,18 @@ module OpenURI
   def self.open(uri, *rest, &block)
     if Cache.enabled?
       begin
-        response = StringIO.new(Cache::get(uri.to_s))
+        response = Cache::get(uri.to_s)
       rescue Memcached::NotFound
         response = false
       end
     end
     
-    unless response
-      response = openuri_original_open(uri, *rest)
-      Cache::set(uri.to_s, response.clone.read) if Cache.enabled?
+    unless
+      response = openuri_original_open(uri, *rest).read
+      Cache::set(uri.to_s, response) if Cache.enabled?
     end
+
+    response = StringIO.new(response)
 
     if block_given?
       begin

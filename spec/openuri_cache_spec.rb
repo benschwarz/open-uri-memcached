@@ -16,7 +16,7 @@ describe OpenURI, "module" do
     OpenURI::Cache.should be_enabled
     open('http://google.com').read.should =~ /html/
   end
-  
+
   it "should query a resource with cache when using block syntax" do
     OpenURI::Cache.enable!
     OpenURI::Cache.should be_enabled
