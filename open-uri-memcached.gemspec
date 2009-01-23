@@ -6,8 +6,5 @@ Gem::Specification.new do |s|
   s.description = "OpenURI with transparent caching"
   s.authors = ["Ben Schwarz"]
   s.summary = "The same OpenURI that you know and love with the power of Memcached"
-  s.files = %w(README lib/openuri_memcached.rb)
-  
-  # Deps
-  s.add_dependency("memcached", ">= 0.10")
+  s.files = %w(README.markdown History.txt License.txt lib/openuri_memcached.rb lib/openuri/memcached.rb lib/openuri/common.rb lib/openuri/rails-cache.rb)
 end

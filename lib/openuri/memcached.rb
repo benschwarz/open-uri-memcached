@@ -6,6 +6,7 @@ rescue LoadError
   require 'rubygems'
 end
 
+gem "memcached", ">= 0.10"
 require 'memcached'
 
 module OpenURI
