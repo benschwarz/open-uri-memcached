@@ -5,7 +5,7 @@ memcached picking up the slack and stopping people from sending you hate mail.
 
 Require the library using 
 
-    require 'openuri_memcached'
+    require 'openuri/memcached'
   
 To get started run your memcached server
   
@@ -22,7 +22,7 @@ The cache defaults to 15 minutes, however this can be changed using:
 ### Execution
 Use exactly the same as you would openuri, only.. enable it.
 
-    require 'openuri_memcached'
+    require 'openuri/memcached'
     OpenURI::Cache.enable!
     # Slow as a wet week
     open("http://germanforblack.com").read 

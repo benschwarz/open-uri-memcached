@@ -1,3 +1,6 @@
+== 0.2.0 2009-01-23
+* Include support for Rails.cache
+
 == 0.1.0 2008-04-17
 * Included Evan Weaver's Memcached C wrapper for a healthy speed improvement
 
