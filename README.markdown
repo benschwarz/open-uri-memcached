@@ -1,40 +1,48 @@
-# OpenURI with Memcached caching
+# OpenURI with caching
 
-Carelessly make heavy OpenURI calls as many times as you like with local
-memcached picking up the slack and stopping people from sending you hate mail.
+Carelessly make OpenURI requests without getting hate mail.
 
-Require the library using 
+## Running with MemCached
+
+Require the library
 
     require 'openuri/memcached'
   
-To get started run your memcached server
+Start memcached server
   
-    $ memcached -d 
+    ben@Spinners ~/ Ϟ memcached -d
 
-The default address that this gem will terminate against is localhost:11211, you can change this using
+Set your memcached host/s (defaults to 127.0.0.1:11211)
   
     OpenURI::Cache.host = ['10.1.1.10:11211', '10.1.1.11:11211']
 
-The cache defaults to 15 minutes, however this can be changed using:
+The default expiry is 15 minutes, this can be changed using the `expiry` method
+    
+    # Ten long minutes
+    OpenURI::Cache.expiry = 600
+    
+## Running using Rails cache
 
-    OpenURI::Cache.expiry = 60 * 10 # Ten long minutes
+You can also cache your OpenURI calls using Rails cache. 
+require the library using `require openuri/rails-cache`
   
 ### Execution
-Use exactly the same as you would openuri, only.. enable it.
+Use exactly the same as you would OpenURI, only.. enable it.
 
-    require 'openuri/memcached'
     OpenURI::Cache.enable!
-    # Slow as a wet week
-    open("http://germanforblack.com").read 
+    # As slow a wet week
+    open("http://ab-c.com.au").read 
   
-Quit your app (leave memcached running) and run the same example, it 
-should now happen in less then ... some time that is really fast.
-
-Questions and comments can be directed to ben at germanforblack.com
+Quit your app (leave memcached running) and re-run the same request, It will come from cache.
 
 ### Requirements
 
-* Ruby 1.8.6
+* Ruby
 * MemCached 
 * memcache (gem)
   * You will need to ensure that you have [corresponding version](http://blog.evanweaver.com/files/doc/fauna/memcached/files/COMPATIBILITY.html) of libmemcached to the memcached gem installed for installation to go by breezy
+
+### Contributors
+
+* [Ben Askins](http://github.com/benaskins)
+* [Rick Olson](http://github.com/technoweenie)
