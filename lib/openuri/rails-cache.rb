@@ -10,11 +10,11 @@ module OpenURI
       end
       
       def get(key)
-        @cache.fetch(key) { false }
+        @cache.read(key)
       end
       
       def set(key, value)
-        @cache.write(key, value, expiry)
+        @cache.write(key, value, :expires_in => expiry)
       end
     end
   end
