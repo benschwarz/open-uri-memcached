@@ -5,7 +5,7 @@ module OpenURI
     class << self
       # Enable caching
       def enable!
-        @cache ||= Rails.cache
+        @cache = Rails.cache
         @cache_enabled = true
       end
       
