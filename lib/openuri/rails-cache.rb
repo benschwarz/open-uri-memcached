@@ -5,16 +5,16 @@ module OpenURI
     class << self
       # Enable caching
       def enable!
-        @cache ||= Rails.cache
+        @cache = Rails.cache
         @cache_enabled = true
       end
       
       def get(key)
-        @cache.fetch(key) { false }
+        @cache.read(key)
       end
       
       def set(key, value)
-        @cache.write(key, value, expiry)
+        @cache.write(key, value, :expires_in => expiry)
       end
     end
   end
